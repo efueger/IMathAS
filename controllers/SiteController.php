@@ -114,6 +114,10 @@ class SiteController extends AppController
         $this->layout = 'nonLoggedUser';
         $params = $this->getRequestParams();
         $model = new LoginForm();
+//        how to debug this and see what is here?
+//        $sessionStatus = $this->checkSession($params);
+//        var_dump($sessionStatus);
+//        echo "session" . [$sessionStatus];
         if ($model->load($this->isPostMethod())) {
             global $tzoffset,$tzname;
             $tzoffset = $params['tzoffset'];
@@ -123,7 +127,6 @@ class SiteController extends AppController
                 Yii::$app->session->set('tzoffset', $params['tzoffset']);
                 Yii::$app->session->set('tzname', $params['tzname']);
                 $sessionStatus = $this->checkSession($params);
-
                 if($sessionStatus['status'] === true){
                     return $this->redirect('dashboard');
                 }

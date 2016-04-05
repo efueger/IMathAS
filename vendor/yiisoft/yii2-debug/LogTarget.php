@@ -109,7 +109,7 @@ class LogTarget extends Target
     {
         $this->messages = array_merge($this->messages, $messages);
         if ($final) {
-            $this->export($this->messages);
+            $this->export();
         }
     }
 
@@ -139,7 +139,7 @@ class LogTarget extends Target
         $summary = [
             'tag' => $this->tag,
             'url' => $request->getAbsoluteUrl(),
-            'ajax' => (int)$request->getIsAjax(),
+            'ajax' => (int) $request->getIsAjax(),
             'method' => $request->getMethod(),
             'ip' => $request->getUserIP(),
             'time' => time(),

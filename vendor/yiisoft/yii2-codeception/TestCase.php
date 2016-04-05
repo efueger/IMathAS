@@ -12,7 +12,9 @@ use yii\base\InvalidConfigException;
 use Codeception\TestCase\Test;
 use yii\base\UnknownMethodException;
 use yii\base\UnknownPropertyException;
+use yii\di\Container;
 use yii\test\ActiveFixture;
+use yii\test\BaseActiveFixture;
 use yii\test\FixtureTrait;
 
 /**
@@ -66,7 +68,7 @@ class TestCase extends Test
     public function __call($name, $params)
     {
         $fixture = $this->getFixture($name);
-        if ($fixture instanceof ActiveFixture) {
+        if ($fixture instanceof BaseActiveFixture) {
             return $fixture->getModel(reset($params));
         } else {
             throw new UnknownMethodException('Unknown method: ' . get_class($this) . "::$name()");
@@ -102,6 +104,7 @@ class TestCase extends Test
      */
     protected function mockApplication($config = null)
     {
+        Yii::$container = new Container();
         $config = $config === null ? $this->appConfig : $config;
         if (is_string($config)) {
             $configFile = Yii::getAlias($config);
@@ -114,7 +117,6 @@ class TestCase extends Test
             if (!isset($config['class'])) {
                 $config['class'] = 'yii\web\Application';
             }
-
             return Yii::createObject($config);
         } else {
             throw new InvalidConfigException('Please provide a configuration array to mock up an application.');
@@ -127,5 +129,6 @@ class TestCase extends Test
     protected function destroyApplication()
     {
         Yii::$app = null;
+        Yii::$container = new Container();
     }
 }

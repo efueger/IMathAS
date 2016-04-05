@@ -29,6 +29,7 @@ class QueryBuilder extends \yii\db\QueryBuilder
         Schema::TYPE_INTEGER => 'int',
         Schema::TYPE_BIGINT => 'bigint',
         Schema::TYPE_FLOAT => 'float(7)',
+        Schema::TYPE_DOUBLE => 'double(15)',
         Schema::TYPE_DECIMAL => 'decimal(10,0)',
         Schema::TYPE_DATETIME => 'datetime',
         Schema::TYPE_TIMESTAMP => 'timestamp',
@@ -62,7 +63,7 @@ class QueryBuilder extends \yii\db\QueryBuilder
                 $value = (int) $value;
             }
 
-            return "ALTER TABLE " . $this->db->schema->quoteTableName($tableName) . " AUTO_INCREMENT=$value;";
+            return 'ALTER TABLE ' . $this->db->schema->quoteTableName($tableName) . " AUTO_INCREMENT=$value;";
         } elseif ($table === null) {
             throw new InvalidParamException("Table not found: $tableName");
         } else {

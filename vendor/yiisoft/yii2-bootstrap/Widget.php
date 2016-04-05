@@ -66,17 +66,27 @@ class Widget extends \yii\base\Widget
         $id = $this->options['id'];
 
         if ($this->clientOptions !== false) {
-            $options = empty($this->clientOptions) ? '' : Json::encode($this->clientOptions);
+            $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
             $js = "jQuery('#$id').$name($options);";
             $view->registerJs($js);
         }
 
+        $this->registerClientEvents();
+    }
+
+    /**
+     * Registers JS event handlers that are listed in [[clientEvents]].
+     * @since 2.0.2
+     */
+    protected function registerClientEvents()
+    {
         if (!empty($this->clientEvents)) {
+            $id = $this->options['id'];
             $js = [];
             foreach ($this->clientEvents as $event => $handler) {
                 $js[] = "jQuery('#$id').on('$event', $handler);";
             }
-            $view->registerJs(implode("\n", $js));
+            $this->getView()->registerJs(implode("\n", $js));
         }
     }
 }
