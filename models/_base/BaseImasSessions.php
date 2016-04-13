@@ -2,7 +2,7 @@
 
 namespace app\models\_base;
 
-use Yii;
+use yii;
 
 /**
  * This is the model class for table "imas_sessions".

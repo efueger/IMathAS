@@ -2,7 +2,7 @@
 
 namespace app\models\_base;
 
-use Yii;
+use yii;
 
 /**
  * This is the model class for table "imas_users".
@@ -26,32 +26,32 @@ use Yii;
  * @property integer $listperpage
  * @property string $hideonpostswidget
  *
- * @property ImasAssessmentSessions[] $imasAssessmentSessions
- * @property ImasBadgerecords[] $imasBadgerecords
- * @property ImasBookmarks[] $imasBookmarks
- * @property ImasContentTrack[] $imasContentTracks
- * @property ImasCourses[] $imasCourses
- * @property ImasDiags[] $imasDiags
- * @property ImasExceptions[] $imasExceptions
- * @property ImasForumLikes[] $imasForumLikes
- * @property ImasForumPosts[] $imasForumPosts
- * @property ImasForumSubscriptions[] $imasForumSubscriptions
- * @property ImasForumViews[] $imasForumViews
- * @property ImasForums[] $imasForums
- * @property ImasGrades[] $imasGrades
- * @property ImasLibraries[] $imasLibraries
- * @property ImasLoginLog[] $imasLoginLogs
- * @property ImasMsgs[] $imasMsgs
- * @property ImasQuestionset[] $imasQuestionsets
- * @property ImasRubrics[] $imasRubrics
- * @property ImasSessions[] $imasSessions
- * @property ImasStudents[] $imasStudents
- * @property ImasStugroupmembers[] $imasStugroupmembers
- * @property ImasTeachers[] $imasTeachers
- * @property ImasTutors[] $imasTutors
- * @property ImasWikiRevisions[] $imasWikiRevisions
- * @property ImasWikiViews[] $imasWikiViews
- * @property McMsgs[] $mcMsgs
+ * @property BaseImasAssessmentSessions[] $imasAssessmentSessions
+ * @property BaseImasBadgerecords[] $imasBadgerecords
+ * @property BaseImasBookmarks[] $imasBookmarks
+ * @property BaseImasContentTrack[] $imasContentTracks
+ * @property BaseImasCourses[] $imasCourses
+ * @property BaseImasDiags[] $imasDiags
+ * @property BaseImasExceptions[] $imasExceptions
+ * @property BaseImasForumLikes[] $imasForumLikes
+ * @property BaseImasForumPosts[] $imasForumPosts
+ * @property BaseImasForumSubscriptions[] $imasForumSubscriptions
+ * @property BaseImasForumViews[] $imasForumViews
+ * @property BaseImasForums[] $imasForums
+ * @property BaseImasGrades[] $imasGrades
+ * @property BaseImasLibraries[] $imasLibraries
+ * @property BaseImasLoginLog[] $imasLoginLogs
+ * @property BaseImasMsgs[] $imasMsgs
+ * @property BaseImasQuestionset[] $imasQuestionsets
+ * @property BaseImasRubrics[] $imasRubrics
+ * @property BaseImasSessions[] $imasSessions
+ * @property BaseImasStudents[] $imasStudents
+ * @property BaseImasStugroupmembers[] $imasStugroupmembers
+ * @property BaseImasTeachers[] $imasTeachers
+ * @property BaseImasTutors[] $imasTutors
+ * @property BaseImasWikiRevisions[] $imasWikiRevisions
+ * @property BaseImasWikiViews[] $imasWikiViews
+ * @property BaseMcMsgs[] $mcMsBasegs
  */
 class   BaseImasUsers extends \yii\db\ActiveRecord
 {
