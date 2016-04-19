@@ -425,7 +425,7 @@ class AppController extends Controller
                 } else {
                     User::updateUser($now, '', $userId);
                 }
-                return $this->redirect('dashboard');
+                return array('status'=>true, 'message'=>"");
             } else {
                 if (empty($_SESSION['challenge'])) {
                     $badSession = true;

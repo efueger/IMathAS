@@ -44,13 +44,13 @@ $msgTotal = array_sum($newMsgCnt);
                 for ($j=0; $j<count($pagelayout[$i]); $j++) {
                     switch ($pagelayout[$i][$j]) {
                         case 0:
-                                AppUtility::printCourses($page_teacherCourseData,_('Courses you\'re teaching'),'teach', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
+                                AppUtility::printCourses($page_teacherCourseData,('Courses you\'re teaching'),'teach', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
                             break;
                         case 1:
-                                AppUtility::printCourses($page_tutorCourseData,_('Courses you\'re tutoring'),'tutor', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
+                                AppUtility::printCourses($page_tutorCourseData,('Courses you\'re tutoring'),'tutor', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
                             break;
                         case 2:
-                            AppUtility::printCourses($page_studentCourseData,_('Courses you\'re taking'),'take', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
+                            AppUtility::printCourses($page_studentCourseData,('Courses you\'re taking'),'take', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
                             break;
                         case 10:
                             AppUtility::printMessagesGadget($page_newmessagelist, $page_coursenames);
@@ -105,14 +105,14 @@ for ($i=0; $i<3; $i++) {
                     switch ($pagelayout[$i][$j]) {
                     case 0:
                     if ($myRights > AppConstant::STUDENT_RIGHT) {
-                        AppUtility::printCourses($page_teacherCourseData,_('Courses you\'re teaching'),'teach', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
+                        AppUtility::printCourses($page_teacherCourseData,('Courses you\'re teaching'),'teach', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
                     }
                     break;
                     case 1:
-                        AppUtility::printCourses($page_tutorCourseData,_('Courses you\'re tutoring'),'tutor', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
+                        AppUtility::printCourses($page_tutorCourseData,('Courses you\'re tutoring'),'tutor', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
                     break;
                     case 2:
-                        AppUtility::printCourses($page_studentCourseData,_('Courses you\'re taking'),'take', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
+                        AppUtility::printCourses($page_studentCourseData,('Courses you\'re taking'),'take', $showNewMsgNote = null, $showNewPostNote = null, $stuHasHiddenCourses = null, $myRights = null, $newMsgCnt = null, $newPostCnt = null);
                     break;
                     case 10:
                         AppUtility::printMessagesGadget($page_newmessagelist, $page_coursenames);

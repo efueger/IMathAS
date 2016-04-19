@@ -1227,7 +1227,12 @@ class CourseController extends AppController
         $teacherId = $this->isTeacher($userId, $courseId);
         $isStudent = $this->isStudent($userId, $courseId);
         $params = $this->getRequestParams();
+        var_dump("All params from getRequestParams");
+        var_dump($params);
         $this->checkSession($params);
+        $checkedSession = $this->checkSession($params);
+        echo('This is after checkSession');
+        var_dump($checkedSession);
         $teacherData = Teacher::getByUserId($userId,$courseId);
         $courseStudent = Course::getByCourseAndUser($courseId);
         $lockAId = $courseStudent['lockaid']; //ysql_result($result,0,2);
