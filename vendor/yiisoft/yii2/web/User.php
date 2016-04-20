@@ -36,14 +36,14 @@ use yii\base\InvalidValueException;
  * You can modify its configuration by adding an array to your application config under `components`
  * as it is shown in the following example:
  *
- * ~~~
+ * ```php
  * 'user' => [
  *     'identityClass' => 'app\models\User', // User must implement the IdentityInterface
  *     'enableAutoLogin' => true,
  *     // 'loginUrl' => ['user/login'],
  *     // ...
  * ]
- * ~~~
+ * ```
  *
  * @property string|integer $id The unique identifier for the user. If null, it means the user is a guest.
  * This property is read-only.
@@ -84,9 +84,9 @@ class User extends Component
      * The first element of the array should be the route to the login action, and the rest of
      * the name-value pairs are GET parameters used to construct the login URL. For example,
      *
-     * ~~~
+     * ```php
      * ['site/login', 'ref' => 1]
-     * ~~~
+     * ```
      *
      * If this property is null, a 403 HTTP exception will be raised when [[loginRequired()]] is called.
      */
@@ -172,6 +172,7 @@ class User extends Component
     {
         if ($this->_identity === false) {
             if ($this->enableSession && $autoRenew) {
+                $this->_identity = null;
                 $this->renewAuthStatus();
             } else {
                 return null;
@@ -390,9 +391,9 @@ class User extends Component
      * The first element of the array should be the route, and the rest of
      * the name-value pairs are GET parameters used to construct the URL. For example,
      *
-     * ~~~
+     * ```php
      * ['admin/index', 'ref' => 1]
-     * ~~~
+     * ```
      */
     public function setReturnUrl($url)
     {
@@ -422,10 +423,12 @@ class User extends Component
             $this->setReturnUrl($request->getUrl());
         }
         if ($this->loginUrl !== null) {
-            return Yii::$app->getResponse()->redirect($this->loginUrl);
-        } else {
-            throw new ForbiddenHttpException(Yii::t('yii', 'Login Required'));
+            $loginUrl = (array) $this->loginUrl;
+            if ($loginUrl[0] !== Yii::$app->requestedRoute) {
+                return Yii::$app->getResponse()->redirect($this->loginUrl);
+            }
         }
+        throw new ForbiddenHttpException(Yii::t('yii', 'Login Required'));
     }
 
     /**
@@ -538,7 +541,7 @@ class User extends Component
             $identity->getId(),
             $identity->getAuthKey(),
             $duration,
-        ]);
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         $cookie->expire = time() + $duration;
         Yii::$app->getResponse()->getCookies()->add($cookie);
     }
@@ -613,7 +616,7 @@ class User extends Component
 
         $this->setIdentity($identity);
 
-        if (($this->authTimeout !== null || $this->absoluteAuthTimeout !== null) && $identity !== null) {
+        if ($identity !== null && ($this->authTimeout !== null || $this->absoluteAuthTimeout !== null)) {
             $expire = $this->authTimeout !== null ? $session->get($this->authTimeoutParam) : null;
             $expireAbsolute = $this->absoluteAuthTimeout !== null ? $session->get($this->absoluteAuthTimeoutParam) : null;
             if ($expire !== null && $expire < time() || $expireAbsolute !== null && $expireAbsolute < time()) {
@@ -636,12 +639,11 @@ class User extends Component
      * Checks if the user can perform the operation as specified by the given permission.
      *
      * Note that you must configure "authManager" application component in order to use this method.
-     * Otherwise an exception will be thrown.
+     * Otherwise it will always return false.
      *
      * @param string $permissionName the name of the permission (e.g. "edit post") that needs access check.
      * @param array $params name-value pairs that would be passed to the rules associated
-     * with the roles and permissions assigned to the user. A param with name 'user' is added to
-     * this array, which holds the value of [[id]].
+     * with the roles and permissions assigned to the user.
      * @param boolean $allowCaching whether to allow caching the result of access check.
      * When this parameter is true (default), if the access check of an operation was performed
      * before, its result will be directly returned when calling this method to check the same
@@ -652,15 +654,30 @@ class User extends Component
      */
     public function can($permissionName, $params = [], $allowCaching = true)
     {
-        $auth = Yii::$app->getAuthManager();
         if ($allowCaching && empty($params) && isset($this->_access[$permissionName])) {
             return $this->_access[$permissionName];
         }
-        $access = $auth->checkAccess($this->getId(), $permissionName, $params);
+        if (($manager = $this->getAuthManager()) === null) {
+            return false;
+        }
+        $access = $manager->checkAccess($this->getId(), $permissionName, $params);
         if ($allowCaching && empty($params)) {
             $this->_access[$permissionName] = $access;
         }
 
         return $access;
+    }
+
+    /**
+     * Returns auth manager associated with the user component.
+     *
+     * By default this is the `authManager` application component.
+     * You may override this method to return a different auth manager instance if needed.
+     * @return \yii\rbac\ManagerInterface
+     * @since 2.0.6
+     */
+    protected function getAuthManager()
+    {
+        return Yii::$app->getAuthManager();
     }
 }

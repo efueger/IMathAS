@@ -123,7 +123,6 @@ class SiteController extends AppController
                 Yii::$app->session->set('tzoffset', $params['tzoffset']);
                 Yii::$app->session->set('tzname', $params['tzname']);
                 $sessionStatus = $this->checkSession($params);
-
                 if($sessionStatus['status'] === true){
                     return $this->redirect('dashboard');
                 }

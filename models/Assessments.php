@@ -27,10 +27,13 @@ class Assessments extends BaseImasAssessments
 
     public static function findAllAssessmentForGradebook($courseId, $canviewall, $istutor, $isteacher, $catfilter, $time)
     {
+//        error_log("WE finally");
+//        $courseId = '1);insert into imas_users (FirstName) values ("Abeerjabthakhaijaan");';
+//        error_log($courseId);
         $query = new Query();
         $query->select(['id', 'name', 'defpoints', 'deffeedback', 'timelimit', 'minscore', 'startdate', 'enddate', 'itemorder', 'gbcategory', 'cntingb', 'avail', 'groupsetid', 'allowlate'])
             ->from('imas_assessments')
-            ->where('courseid = '.$courseId)
+            ->where(['courseid' => $courseId])
             ->andWhere(['>', 'avail', AppConstant::NUMERIC_ZERO]);
         if (!$canviewall) {
             $query->andWhere(['>', 'cntingb', AppConstant::NUMERIC_ZERO]);
