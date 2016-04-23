@@ -30,7 +30,8 @@ exclude_paths:
 - config/
 - tests/
 - vendor/
-- web/libs/
+- web/
+- web/
 - tests/
 - docs/
 - components/libs/
