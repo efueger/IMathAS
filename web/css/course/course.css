@@ -1,0 +1,268 @@
+.course-copy-export{
+    background-color: #f8f8f8;
+    display: block;
+    padding: 12px 22px;
+}
+.course-top-menu{
+    padding-top: 11px;
+    padding-right: 0;
+    padding-left: 0;
+}
+.add-item{
+    background-color: #f0f0f0;
+    display: block;
+    padding: 10px 22px;
+    border-bottom: 1px #dadada solid;
+    border-top: 1px #dadada solid;
+    cursor: pointer;
+}
+.add-item-in-block{
+    background-color: #f0f0f0;
+    display: block;
+    padding: 10px 22px;
+    border-bottom: 1px #dadada solid;
+    border-top: 1px #dadada solid;
+    border-left: 1px #dadada solid;
+    cursor: pointer;
+    width: 95.6%;
+    margin-left: 46px;
+}
+
+.add-item-text{
+    padding-top: 3px;
+    padding-right: 0;
+    padding-left: 0;
+}
+.plus-icon{
+    padding-right: 0;
+    padding-left: 0;
+}
+.ui-dialog-titlebar, .ui-widget-header, .ui-corner-all, .ui-helper-clearfix, .ui-draggable-handle{
+    background-color: #ffffff !important;
+    border: none;
+    /*display: none;*/
+}
+.assessment{
+    position: absolute;
+    top: 5px;
+    left:10px;
+    width: 110px;
+    height:100px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.assessment:hover{
+   background-color: #f0f0f0;
+}
+.icon-center{
+    position: relative;
+    top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.item-name{
+    margin-top:16px;
+    text-align: center;
+    font-size: 12px;
+}
+.inline-text{
+    position: absolute;
+    top: 5px;
+    left:140px;
+    width: 110px;
+    height:100px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.inline-text:hover{
+    background-color: #f0f0f0;
+}
+.link{
+    position: absolute;
+    top: 5px;
+    left:270px;
+    width: 110px;
+    height:100px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.link:hover{
+    background-color: #f0f0f0;
+}
+.forum{
+    position: absolute;
+    top: 125px;
+    left:10px;
+    width: 110px;
+    height:100px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.forum:hover{
+    background-color: #f0f0f0;
+}
+.wiki{
+    position: absolute;
+    top: 125px;
+    left:140px;
+    width: 110px;
+    height:100px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.wiki:hover{
+    background-color: #f0f0f0;
+}
+.calendar-pop-up{
+    position: absolute;
+    top: 125px;
+    left:270px;
+    width: 110px;
+    height:100px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.calendar-pop-up:hover{
+    background-color: #f0f0f0;
+}
+
+div.dialog-items{
+    min-height: 362px !important;
+}
+.item-name-small{
+    margin-top:16px;
+    text-align: center;
+    margin-right: 0;
+    font-size: 12px;
+}
+
+.mvsel{
+    width: 80px !important;
+    float: left!important;
+    background-color: #6d6d6d;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    line-height: 1.42857;
+}
+.arrow{
+    color: #ffffff;
+}
+.course-setting-button{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+.select1{
+    display:none; /* Hide it first of all */
+    background:#F8F8F8;
+    border:1px solid #CCC;
+    box-shadow:0 1px 3px rgba(0,0,0,0.15);
+    position:relative;
+    left:0px;
+    border-radius:3px;
+    /*margin-top: 30px;*/
+    z-index: 100;
+    overflow: visible;
+    right: 40px!important;
+}
+.block-item{
+    position: absolute;
+    top: 245px;
+    left:140px;
+    width: 110px;
+    height:100px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.block-item:hover{
+    background-color: #f0f0f0;
+}
+.icon-size{
+    width: 34px;
+    height: 34px;
+}
+.item-icon-alignment{
+    padding-top: 4px;
+    width: 24px;
+    height: 24px;
+    margin-right:12px ;
+}
+
+.right-side{
+    height: 40px;
+    width: 150px;
+    background-color: #2C368E;
+}
+.index-header .right-side .item-icon{
+    float: left;
+    margin-left: 5px;
+    padding: 0;
+    height: 34px;
+    width: 34px;
+}
+.display-item-details{
+    padding-top: 7px;
+}
+
+.student-no-second-level-nav{
+    padding-top: 20px
+}
+.student-course-alignment{
+    margin-left: 20px;
+}
+.student-course-alignment-calendar{
+    margin-right: 20px;
+}
+.add-item-icon{
+    padding-top: 9px;
+    width: 24px;
+    height: 30px;
+}
+.student-block{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.inside-mvsel{
+    width: 50px !important;
+    float: left!important;
+    background-color: #2C78B2;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.block-name-alignment{
+    padding-right: 6px;
+}
+.assessment-add-item-icon{
+    padding-top: 3px;
+    width: 40px;
+    height: 45px;
+}
+.add-item1{
+    background-color: #f0f0f0;
+    display: block;
+    padding: 10px 22px;
+    cursor: pointer;
+}
+.add-assessment-margin {
+    margin-left: 15px;
+    margin-bottom: 30px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.assement-options-margin {
+    margin-left: -15px !important;
+    width: 102.7% !important;
+}
+.select-ask-ques-link select, .select-use-group-set select, .select-gradebook-category select, .select-tutor-access select{
+    width:50%;
+}
+
+.ac_checked_date{
+    background-color:#ffcc99!important;
+}

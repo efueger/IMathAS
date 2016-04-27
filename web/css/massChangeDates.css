@@ -1,0 +1,19 @@
+.padding-top{
+    padding-top: 15px;
+}
+
+.show {
+    display:inline;
+}
+.hide
+{
+    display:none;
+}
+td.dis
+{
+    color:#ccc;opacity:0.5;
+}
+td.dis input
+{
+    color: #ccc;
+}

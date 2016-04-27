@@ -1,0 +1,136 @@
+.margin-top
+{
+    margin-top: 20px;
+    margin-left: 20%;
+}
+.change-assessment
+{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.text-align
+{
+    text-align: -webkit-center;
+}
+.assesment-msg-table {
+    margin-bottom: 10px;
+    margin-top: 3px !important;
+    border-collapse: collapse;
+    /*margin: 0px;*/
+    position: relative;
+}
+table.assesment-msg-table thead th {
+    /*border-bottom: 2px solid #00f;*/
+    position: relative;
+    text-align: center;
+    z-index: 20;
+}
+.width-hundread-per {
+    width: 100%;
+}
+.margin-left-minus-thirty {
+    margin-left: -30px !important;
+}
+.padding-left-fifteen {
+padding-left: 15px !important;
+}
+
+.end-assesment-shadowbox {
+    padding:2em !important;
+}
+.margin-bottom-twenty-five {
+margin-bottom: 25px;
+}
+.end-assesment-shadowbox td, .end-assesment-shadowbox th {
+padding: 7px 0px 7px 0px;
+}
+span.hidden {
+    display: none;
+}
+
+span.show {
+    display: inline;
+}
+
+table td {
+    border-bottom: 1px solid #ccf;
+}
+
+.assessment-body{
+    margin-left: 35%;
+}
+.modify-lti-domain-credential {
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    padding-right: 45px !important;
+}
+.modify-group-padding {
+    padding: 5px 30px 0px 30px !important;
+}
+.show-license-question {
+    background-color: #F8F8F8;
+    margin-top: 20px;
+    padding-left: 20px !important;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.show-license-shadowbox {
+    padding: 10px 30px 30px 30px !important;
+}
+.rename-group-padding {
+    padding: 15px 30px 30px 30px !important;
+}
+.margin-top-thirty {
+    margin-top: 30px;
+}
+.modify-lti-domain-group-padding {
+    padding: 5px 30px 30px 30px !important;
+}
+.update-group-btn, .add-lti-credentials-btn {
+    float: right !IMPORTANT;
+    margin-top: -8.6% !IMPORTANT;
+    margin-right: -30px !IMPORTANT;
+}
+.default-end-timepicker .bootstrap-timepicker, .default-start-timepicker .bootstrap-timepicker {
+    width: 90%;
+}
+.add-group-btn {
+    float: right !IMPORTANT;
+    margin-top: -92px !IMPORTANT;
+    margin-right: -30px !IMPORTANT;
+}
+/*.summary-html-lord iframe, .instructions-html-lord iframe {*/
+    /*max-width: 909px !important;*/
+/*}*/
+@media screen and (min-width: 1300px) {
+    .summary-html-lord iframe, .instructions-html-lord iframe {
+        max-width: 861px !important;
+    }
+}
+@media screen and (min-width: 979px) {
+    .summary-html-lord iframe, .instructions-html-lord iframe {
+        max-width: 750px !important;
+    }
+}
+@media screen and (min-width: 640px) {
+    .summary-html-lord iframe, .instructions-html-lord iframe {
+        max-width: 650px !important;
+    }
+}
+.available-after-time-picker .bootstrap-timepicker, .available-until-time-picker .bootstrap-timepicker {
+    width: 100% !important;;
+}
+.ui-dialog {
+    zoom: 1;
+}
+.modify-group-table .dataTables_length label,.modify-group-table .dataTables_info{
+    float: left;
+}
+.modify-group-table .dataTables_paginate .pagination {
+    float: right;
+}
+.assessment-message-textarea table, .assessment-message-textarea iframe {
+    width: auto;
+    max-width: 100% !important;
+}

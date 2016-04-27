@@ -1,6 +1,8 @@
 <?php
+use app\components\AppUtility;
+
 $graphfilterdir = rtrim(dirname(__FILE__), '/\\');
-require_once("$graphfilterdir/../../assessment/mathphp2.php");
+require_once($graphfilterdir."/../../components/mathphp2.php");
 // ASCIIsvgIMG.php
 // (c) 2006-2009 David Lippman   http://www.pierce.ctc.edu/dlippman
 // Generates an image based on an ASCIIsvg script
@@ -88,7 +90,8 @@ function AStoIMG($w=200, $h=200) {
 	} else {
 		$this->img = imagecreate($w,$h);
 	}
-	$this->fontfile =  $GLOBALS['graphfilterdir'].'/FreeSerifItalic.ttf';
+
+	$this->fontfile =  AppUtility::getBasePath().'/filter/graph/FreeSerifItalic.ttf';
 	$this->width = $w;
 	$this->height = $h;
 	$this->xunitlength = $w/10;
@@ -1193,7 +1196,7 @@ function parseargs($str) {
 }
 function outputimage() {
 	if (func_num_args()>0) {
-		$filename = func_get_arg(0);
+		$filename = Yii::$app->basePath.'/filter'.func_get_arg(0);
 		imagepng($this->img,$filename,8);
 	} else {
 		imagepng($this->img,null,8);

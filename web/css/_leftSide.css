@@ -1,0 +1,37 @@
+.needed
+{
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #ddddff;
+    box-sizing: border-box;
+    border-radius:10px;
+    border: 2px solid #000000;
+    padding: 20px;
+}
+.ahrefAlign
+{
+    margin-left: 12px;
+}
+.course
+{
+    margin-left: 21%;
+}
+.courseText
+{
+    margin-left: 20%;
+}
+.buttonAlignment
+{
+    float: right;
+    margin-top: -5%;
+    margin-right: -3%;
+}
+.view
+{
+    float: left;
+    margin-left: -12%;
+}
+.addDropdown
+{
+    margin-left: 16%;
+}

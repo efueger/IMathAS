@@ -1,11 +1,11 @@
 <?php
 	$dbsetup = true; //to prevent database connection
-	require("../../config.php");
 	if((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO']=='https'))  {
 		 $urlmode = 'https://';
 	 } else {
 		 $urlmode = 'http://';
 	 }
+    $fn = '';
 	$imgdir = 'imgs/'; //relative to current dir
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
